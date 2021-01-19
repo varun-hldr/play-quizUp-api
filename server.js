@@ -7,6 +7,7 @@ const app = express();
 const PORT = process.env.PORT || 8080; // Step 1
 
 const routes = require("./routes/users");
+const LeaderRoutes = require("./routes/Leaderboard");
 
 // Routes
 app.get("/", (req, res) => {
@@ -39,5 +40,6 @@ if (process.env.NODE_ENV === "production") {
 // HTTP request logger
 app.use(morgan("tiny"));
 app.use("/users", routes);
+app.use("/leaderboard", LeaderRoutes);
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));

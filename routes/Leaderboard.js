@@ -61,8 +61,7 @@ router.patch("/:userId", async (req, res) => {
       { _id: req.params.userId },
       {
         $set: {
-          avatar: req.body.avatar,
-          quizList: req.body.quizList,
+          points: req.body.points,
         },
       }
     );
